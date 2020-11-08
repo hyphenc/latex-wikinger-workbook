@@ -1,7 +1,7 @@
 %!TEX TS-program = pdflatex
 % wikinger workbook
 % https://tex.stackexchange.com/questions/1319/showcase-of-beautiful-typography-done-in-tex-friends/74609#74609
-\documentclass[twoside,12pt,a4paper,ngerman,openany]{book}
+\documentclass[12pt,a4paper,ngerman]{book}
 \usepackage[demo]{graphicx}
 \usepackage[hang,splitrule]{footmisc}
 \usepackage[ngerman]{babel}
@@ -11,6 +11,7 @@
 \usepackage{booktabs}
 \usepackage{chngcntr}
 \usepackage{color}
+\usepackage{afterpage}
 \usepackage{fancyhdr}
 \usepackage{fourier-orns}
 \usepackage{geometry}
@@ -35,6 +36,7 @@ tracking=true,expansion=true]{microtype}
 \newcommand{\ornimpar}{\raisebox{-1.9pt}[10pt][10pt]{\textxswup} \hrulefill}
 \newcommand{\estcab}[1]{\itshape{\nouppercase #1}}
 \newcommand*\initfamily{\usefont{U}{GotIn}{xl}{n}}
+\newcommand\blankpage{\null \thispagestyle{empty} \addtocounter{page}{-1} \newpage}
 
 \geometry{
 tmargin=3cm,bmargin=3cm,
@@ -43,6 +45,7 @@ headheight=1.5cm,headsep=0.8cm,
 footskip=0.5cm}
 
 \setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
+% ^^^ \usepackage[parfill]{parskip} ? TODO
 \setlength{\parindent}{1em}
 \setlength{\footnotemargin}{0.3cm}
 \setlength{\footnotesep}{0.4cm} 
@@ -85,7 +88,11 @@ footskip=0.5cm}
 % TODO aufgaben environment. ähnlich zu fußnoten
 % TODO fußnoten in den jew. rand
 % https://zapier.com/blog/download-images-google-doc-word/
-% \glqq, \grqq
+% \glqq \grqq richtige quotes
+% titelseite in gimp
+% lösungsheft!
+% https://tex.stackexchange.com/questions/23860/how-to-include-a-picture-over-two-pages-left-part-on-left-side-right-on-right ?
+% doppelseitig: mit short edge drucken
 
 \begin{document}
 
@@ -93,9 +100,12 @@ footskip=0.5cm}
 \date{titelseite}
 \title{titelseite}
 
+\afterpage{\blankpage}
+% NOTE für leseversion aus
 \maketitle
 \thispagestyle{empty}
 \tableofcontents
+% TODO heading weiter oben
 \thispagestyle{empty}
 \newpage
 \thispagestyle{empty}
@@ -132,37 +142,22 @@ ein gewisses Maß an Hygiene und auch Schmuck war bereits damals ein wichtiges A
 
 
 
-\section{Zeitstrahl}
+\section{Zeitlicher Überblick}
 
+% https://tex.stackexchange.com/questions/462984/fancy-vertical-timeline
+% https://tex.stackexchange.com/questions/544122/vertical-timeline-that-uses-width-of-the-page
 
 
 \fchapter{Der typische Wikinger}
 
-
+\section{Kleidung}
 \section{Alltagskleidung}
 
-\flettrine{L}{arlegy}, organism like \emph{Candida albicans} has
- been considered different of \emph{Protozoa} and related with green plants. However, today there 
- are evidences that animals and true fungi are indeed closer to each other than to any other group 
- in the eukaryote tree, far from the alveolates and other eukaryotic lineages.  
-
-%\begin{wraptable}{r}{7 cm}
-%\vspace{-.5cm}
-%\centering
-%\footnotesize
-%\caption{\label{wraptab}Estimated fungal species.}
-%\begin{tabular}{lr}\\\toprule  
-%Authors & Species \\\midrule
-%Bisby and Ainsworth (1943) & $10^5$ \\  
-%Martin (1951) &  $2.5\times10^5$  \\
-%Hawksworth (1991) & $1.5\times10^6$ \\ 
-%O’Brien \emph{et al.} (2005) & $>3.5\times10^6$ \\  \bottomrule
-%\end{tabular}
-%\end{wraptable} 
-
-\lipsum[4-6]
-
 \section{Kriegerkleidung}
+
+\section{Haus und Hof} % TODO für "Wohnsituation, Nahrung, etc" ??
+
+\section{Alltag}
 
 \lipsum[1-2]
 
@@ -192,18 +187,24 @@ ein gewisses Maß an Hygiene und auch Schmuck war bereits damals ein wichtiges A
 
 \lipsum[6]
 
-\section{Die Rolle der Frau} %TODO mit oder ohne "die"?
+\section{Die Rolle der Frau}
+%TODO mit oder ohne "die"?
 
 \lipsum[6]
 
-\fchapter{Zusammenfassung} %TODO: fix name
+\fchapter{Zusammenfassung}
+%TODO: fix name
 
-\section{Wiederholung} %TODO: name, hört sich zu expansiv an
+\section{Wiederholung}
+%TODO: name, hört sich zu expansiv an
 
 \lipsum[6]
 
 \section{Ende}
 
 \lipsum[6]
+
+\newpage % für quellen
+\section{Quellenangaben}
 
 \end{document}
