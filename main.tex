@@ -1,7 +1,7 @@
 %!TEX TS-program = pdflatex
 % wikinger workbook
 % https://tex.stackexchange.com/questions/1319/showcase-of-beautiful-typography-done-in-tex-friends/74609#74609
-\documentclass[12pt,a4paper,ngerman]{book}
+\documentclass[12pt,a4paper,ngerman,openany]{book}
 \usepackage[demo]{graphicx}
 \usepackage[hang,splitrule]{footmisc}
 \usepackage[ngerman]{babel}
@@ -13,7 +13,6 @@
 \usepackage{color}
 \usepackage{afterpage}
 \usepackage{fancyhdr}
-\usepackage{fourier-orns}
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{hyphenat}
@@ -23,7 +22,9 @@
 \usepackage{tabularx}
 \usepackage{titlesec}
 \usepackage{wrapfig}
+\usepackage{tcolorbox}
 \usepackage{etoolbox}
+\usepackage{paralist}
 \usepackage[final,
 stretch=10,protrusion=true,
 tracking=true,expansion=true]{microtype}
@@ -32,17 +33,23 @@ tracking=true,expansion=true]{microtype}
 \renewcommand{\footnoterule}{\vspace{0.5em}\noindent{\line(1,0){120}} \vspace{.5em} }
 \renewcommand{\LettrineFontHook}{\initfamily}
 \newcommand{\flettrine}[2]{\lettrine[lines=2, depth=0, loversize=0.25, nindent=0.69pt, lraise=0.15]{\initfamily{#1}}{#2}}
-\newcommand{\ornpar}{\noindent {\hrulefill \raisebox{-1.9pt}[10pt][10pt]{\textxswup}}}
-\newcommand{\ornimpar}{\raisebox{-1.9pt}[10pt][10pt]{\textxswup} \hrulefill}
 \newcommand{\estcab}[1]{\itshape{\nouppercase #1}}
 \newcommand*\initfamily{\usefont{U}{GotIn}{xl}{n}}
 \newcommand\blankpage{\null \thispagestyle{empty} \addtocounter{page}{-1} \newpage}
+\newcommand{\aufgaben}[1]{
+  \begin{tcolorbox}
+    \textbf{Aufgaben}
+    \begin{enumerate}
+      #1
+    \end{enumerate}
+  \end{tcolorbox}
+}
 
 \geometry{
-tmargin=3cm,bmargin=3cm,
+tmargin=0cm,bmargin=3cm,
 lmargin=3cm,rmargin=2cm,
 headheight=1.5cm,headsep=0.8cm,
-footskip=0.5cm}
+footskip=1cm}
 
 \setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
 % ^^^ \usepackage[parfill]{parskip} ? TODO
@@ -50,10 +57,10 @@ footskip=0.5cm}
 \setlength{\footnotemargin}{0.3cm}
 \setlength{\footnotesep}{0.4cm} 
 \addtolength{\footskip}{0.5cm}
+\setdefaultleftmargin{0.667cm}{}{}{}{}{}
 
 \newcommand{\fchapter}[1]{\chapter{#1}\thispagestyle{chapterstyle}}
 
-% https://www.overleaf.com/learn/latex/headers_and_footers#Reference_guide
 \fancyhf{}
 
 \fancypagestyle{chapterstyle}{ % für kapitelbeginn
@@ -85,7 +92,6 @@ footskip=0.5cm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% TODO aufgaben environment. ähnlich zu fußnoten
 % TODO fußnoten in den jew. rand
 % https://zapier.com/blog/download-images-google-doc-word/
 % \glqq \grqq richtige quotes
@@ -94,22 +100,25 @@ footskip=0.5cm}
 % https://tex.stackexchange.com/questions/23860/how-to-include-a-picture-over-two-pages-left-part-on-left-side-right-on-right ?
 % doppelseitig: mit short edge drucken
 
+% https://mostlymaths.net/2008/09/latex-booklets.html/
+% https://tex.stackexchange.com/questions/261431/print-eight-a6-pages-on-one-two-sided-a4-sheet-in-a-book-folding-order
+
 \begin{document}
 
-\author{titelseite}
-\date{titelseite}
-\title{titelseite}
-
-\afterpage{\blankpage}
-% NOTE für leseversion aus
-\maketitle
-\thispagestyle{empty}
-\tableofcontents
-% TODO heading weiter oben
+\vspace*{15cm} \textbf{RÜCKSEITE}
 \thispagestyle{empty}
 \newpage
 \thispagestyle{empty}
+\vspace*{15cm} \textbf{TITELSEITE}
+\afterpage{\blankpage{}}
+\tableofcontents
+\afterpage{\blankpage}
+\thispagestyle{empty}
 
+\newgeometry{tmargin=3cm,bmargin=3cm,
+lmargin=3cm,rmargin=2cm,
+headheight=1.5cm,headsep=0.8cm,
+footskip=1cm} % fürs toc 0cm, später dann 3cm tmargin
 \setstretch{1.125} % 1.25 line spacing for text
 
 \fchapter{Einleitung}
@@ -140,7 +149,9 @@ Außerdem war eine Hochzeit zwischen Mann und Frau offiziell durchaus möglich, 
 Für die Zivilisiertheit der Wikinger sprach außerdem ihre Intention, sich nach außen hin gut und ordentlich zu präsentieren, denn die Wikinger legten Wert auf ihr Äußeres. Dazu zählte die Art sich zu kleiden,
 ein gewisses Maß an Hygiene und auch Schmuck war bereits damals ein wichtiges Accessories. Zahlreiche Goldschmiedearbeiten und Runensteine, die man später in vielen der Gräbern fand, zeugten von der geistigen Feinheit der Wikinger. 
 
-
+\aufgaben {
+  \item Lies den Text und notiere dir Stichworte, um dir einen Überblick zu schaffen.
+}
 
 \section{Zeitlicher Überblick}
 
@@ -157,17 +168,13 @@ ein gewisses Maß an Hygiene und auch Schmuck war bereits damals ein wichtiges A
 
 \section{Haus und Hof} % TODO für "Wohnsituation, Nahrung, etc" ??
 
-\section{Alltag}
+\section{Alltag} % keine unterteilung in unterkapitel
 
-\lipsum[1-2]
+\lipsum[6]
 
 \section{Waffen}
 
 \lipsum[1-2]
-
-\section{Alltag} % keine unterteilung in unterkapitel
-
-\lipsum[6]
 
 \fchapter{Wikinger um die Welt}
 
@@ -188,7 +195,6 @@ ein gewisses Maß an Hygiene und auch Schmuck war bereits damals ein wichtiges A
 \lipsum[6]
 
 \section{Die Rolle der Frau}
-%TODO mit oder ohne "die"?
 
 \lipsum[6]
 
