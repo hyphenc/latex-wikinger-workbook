@@ -25,6 +25,7 @@
 \usepackage{tcolorbox}
 \usepackage{etoolbox}
 \usepackage{paralist}
+\usepackage{pdfpages}
 \usepackage[final,
 stretch=10,protrusion=true,
 tracking=true,expansion=true]{microtype}
@@ -93,27 +94,39 @@ footskip=1cm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO fußnoten in den jew. rand
-% https://zapier.com/blog/download-images-google-doc-word/
-% \glqq \grqq richtige quotes
-% titelseite in gimp
-% lösungsheft!
+% %NOTE https://zapier.com/blog/download-images-google-doc-word/
+% %TODO \glqq \grqq richtige quotes
 % https://tex.stackexchange.com/questions/23860/how-to-include-a-picture-over-two-pages-left-part-on-left-side-right-on-right ?
 % doppelseitig: mit short edge drucken
+% TODO hunspell -d de_DE -t --check-apostrophe --check-url main.tex
+% TODO schwarz weiß
+% pdfbook2 -t 0 -b 0 -i 0 -o 0 main.pdf
 
 % https://mostlymaths.net/2008/09/latex-booklets.html/
 % https://tex.stackexchange.com/questions/261431/print-eight-a6-pages-on-one-two-sided-a4-sheet-in-a-book-folding-order
 
 \begin{document}
 
-\vspace*{15cm} \textbf{RÜCKSEITE}
+\includepdf[pages=-]{wikinger-workbook-front.pdf}
 \thispagestyle{empty}
 \newpage
-\thispagestyle{empty}
-\vspace*{15cm} \textbf{TITELSEITE}
-\afterpage{\blankpage{}}
-\tableofcontents
+
+%\afterpage{\blankpage{}}
+%\thispagestyle{empty}
+
+%%%\newpage
+%%%\thispagestyle{empty}
+%\afterpage{\blankpage}
 \afterpage{\blankpage}
+%%%\thispagestyle{empty}
+\tableofcontents
 \thispagestyle{empty}
+
+
+%%%\thispagestyle{empty}
+
+%\afterpage{\blankpage}
+%\thispagestyle{empty}
 
 \newgeometry{tmargin=3cm,bmargin=3cm,
 lmargin=3cm,rmargin=2cm,
@@ -147,7 +160,7 @@ Auf politischer Ebene musste man den Wikingern sicherlich auch eine gewisse Aner
 welche das “Thing” genannt wurde. Die Termine waren festgelegt und die Versammlungen, in denen man über politische Angelegenheiten, Recht und Gesetz abstimmte und beriet, fanden immer unter freiem Himmel statt.\\
 Außerdem war eine Hochzeit zwischen Mann und Frau offiziell durchaus möglich, genauso aber auch, sich wieder voneinander scheiden zu lassen. 
 Für die Zivilisiertheit der Wikinger sprach außerdem ihre Intention, sich nach außen hin gut und ordentlich zu präsentieren, denn die Wikinger legten Wert auf ihr Äußeres. Dazu zählte die Art sich zu kleiden,
-ein gewisses Maß an Hygiene und auch Schmuck war bereits damals ein wichtiges Accessories. Zahlreiche Goldschmiedearbeiten und Runensteine, die man später in vielen der Gräbern fand, zeugten von der geistigen Feinheit der Wikinger. 
+ein gewisses Maß an Hygiene und auch Schmuck war bereits damals ein wichtiges Accessoire. Zahlreiche Goldschmiedearbeiten und Runensteine, die man später in vielen der Gräbern fand, zeugten von der geistigen Feinheit der Wikinger. 
 
 \aufgaben {
   \item Lies den Text und notiere dir Stichworte, um dir einen Überblick zu schaffen.
@@ -157,7 +170,7 @@ ein gewisses Maß an Hygiene und auch Schmuck war bereits damals ein wichtiges A
 
 % https://tex.stackexchange.com/questions/462984/fancy-vertical-timeline
 % https://tex.stackexchange.com/questions/544122/vertical-timeline-that-uses-width-of-the-page
-
+% zur not selber boxen und linien draw-en
 
 \fchapter{Der typische Wikinger}
 
@@ -190,7 +203,7 @@ ein gewisses Maß an Hygiene und auch Schmuck war bereits damals ein wichtiges A
 
 \lipsum[6]
 
-\section{Gemeinschaft}
+\section{Gemeinschaft und Gesellschaftsbild}
 
 \lipsum[6]
 
@@ -212,5 +225,19 @@ ein gewisses Maß an Hygiene und auch Schmuck war bereits damals ein wichtiges A
 
 \newpage % für quellen
 \section{Quellenangaben}
+
+% TODO so viele leere seiten einfügen wie nötig
+\afterpage{\blankpage}
+\afterpage{\blankpage}
+\afterpage{\blankpage}
+\afterpage{\blankpage}
+\afterpage{\blankpage}
+
+\newpage
+\vspace*{24cm} Erstellt von Alexa, Mareike, Nils und William // Projektkurs Wikinger 2020
+\thispagestyle{empty}
+\newpage
+\includepdf[pages=-]{wikinger-workbook-back.pdf}
+\thispagestyle{empty}
 
 \end{document}
