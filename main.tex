@@ -2,30 +2,31 @@
 % wikinger workbook
 % https://tex.stackexchange.com/questions/1319/showcase-of-beautiful-typography-done-in-tex-friends/74609#74609
 \documentclass[12pt,a4paper,ngerman,openany]{book}
-\usepackage[demo]{graphicx}
+\usepackage[demo]{graphicx} % TODO change for images
 \usepackage[hang,splitrule]{footmisc}
 \usepackage[ngerman]{babel}
+\usepackage[parfill]{parskip}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{afterpage}
 \usepackage{amssymb}
 \usepackage{booktabs}
 \usepackage{chngcntr}
 \usepackage{color}
-\usepackage{afterpage}
+\usepackage{etoolbox}
 \usepackage{fancyhdr}
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{hyphenat}
 \usepackage{lettrine}
 \usepackage{lipsum}
-\usepackage{setspace}
-\usepackage{tabularx}
-\usepackage{titlesec}
-\usepackage{wrapfig}
-\usepackage{tcolorbox}
-\usepackage{etoolbox}
 \usepackage{paralist}
 \usepackage{pdfpages}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{wrapfig}
 \usepackage[final,
 stretch=10,protrusion=true,
 tracking=true,expansion=true]{microtype}
@@ -45,6 +46,7 @@ tracking=true,expansion=true]{microtype}
     \end{enumerate}
   \end{tcolorbox}
 }
+\newcommand{\erklaer}[2]{\leavevmode\marginpar{\footnotesize \textbf{#1:}\\#2}\ignorespaces}
 
 \geometry{
 tmargin=0cm,bmargin=3cm,
@@ -53,8 +55,7 @@ headheight=1.5cm,headsep=0.8cm,
 footskip=1cm}
 
 \setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
-% ^^^ \usepackage[parfill]{parskip} ? TODO
-\setlength{\parindent}{1em}
+\setlength{\parindent}{0cm}
 \setlength{\footnotemargin}{0.3cm}
 \setlength{\footnotesep}{0.4cm} 
 \addtolength{\footskip}{0.5cm}
@@ -84,7 +85,7 @@ footskip=1cm}
 \counterwithout{table}{chapter} % continuous figure/table numbering
 
 \input GotIn.fd % lettrine font
-\setstretch{1} % 1x line spacing for toc
+\setstretch{1.125} % 1.125x line spacing
 \hyphenation{Mathe-matik wieder-gewinnen} % richtige worttrennung
 
 % space between 'chap #' and chap-title (https://latex.org/forum/viewtopic.php?t=21666)
@@ -93,7 +94,6 @@ footskip=1cm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% TODO fußnoten in den jew. rand
 % %NOTE https://zapier.com/blog/download-images-google-doc-word/
 % %TODO \glqq \grqq richtige quotes
 % https://tex.stackexchange.com/questions/23860/how-to-include-a-picture-over-two-pages-left-part-on-left-side-right-on-right ?
@@ -111,28 +111,14 @@ footskip=1cm}
 \thispagestyle{empty}
 \newpage
 
-%\afterpage{\blankpage{}}
-%\thispagestyle{empty}
-
-%%%\newpage
-%%%\thispagestyle{empty}
-%\afterpage{\blankpage}
 \afterpage{\blankpage}
-%%%\thispagestyle{empty}
 \tableofcontents
 \thispagestyle{empty}
 
-
-%%%\thispagestyle{empty}
-
-%\afterpage{\blankpage}
-%\thispagestyle{empty}
-
-\newgeometry{tmargin=3cm,bmargin=3cm,
-lmargin=3cm,rmargin=2cm,
-headheight=1.5cm,headsep=0.8cm,
-footskip=1cm} % fürs toc 0cm, später dann 3cm tmargin
-\setstretch{1.125} % 1.25 line spacing for text
+\newgeometry{top=2cm, bottom=2.5cm,% for text
+outer=3.75cm, inner=2cm,%
+heightrounded, marginparwidth=2.8cm,%
+marginparsep=0.3cm}
 
 \fchapter{Einleitung}
 
@@ -147,7 +133,7 @@ Und diese waren keinesfalls ausnahmslos Krieger oder Kämpfer, in dem bunten Gem
 Sie begannen die weiten Gewässer zu erkunden, neues Gebiet zu entdecken und auch um ihr Überleben zu kämpfen. Es entwickelten sich gesellschaftliche Stämme und Dörfer.
 Ein Beispiel dafür kann man noch heute fast eintausend Jahre später in der Nähe von Schleswig begutachten: das 770 gegründete Haithabu. Zu damaliger Zeit war dieser zentrale,
 zwischen der Nord- und Ostsee gelegene Ort ein wichtiger Handelsort und Hauptumschlagplatz für die Wikinger aus Skandinavien, dem Baltikum und Westeuropa. Mit verschiedenen Rohstoffen wie beispielsweise Eisen,
-das zu jener Zeit sogar recht selten und kostbar war, wurden Waffen hergestellt, mit denen Kämpfe ausgetragen wurden.\\
+das zu jener Zeit sogar recht selten und kostbar war, wurden Waffen hergestellt, mit denen Kämpfe ausgetragen wurden.\\ 
 Auf ihren Reisen auf dem Meer entdeckten sie nicht nur neues Gebiet, sondern trafen auch auf andere Gesellschaften. Bei diesen Begegnungen gingen sie rücksichtslos vor, raubten andere Völker aus und zerstörten anderes Eigentum.
 Solche Kämpfe waren üblich. Außerdem versklavten die Wikinger die Überlebenden und nahmen sie mit auf ihre Raubzüge. Andere Sklaven wurden von diesen in das Heimatdorf der Wikinger gebracht, damit jene dort bei den zu erledigenden Aufgaben halfen.
 Zum anderen waren die Wikinger auch Händler, die mit verschiedensten Waren auf Reisen aber auch im Heimatdorf handelten.\\
@@ -181,7 +167,7 @@ ein gewisses Maß an Hygiene und auch Schmuck war bereits damals ein wichtiges A
 
 \section{Haus und Hof} % TODO für "Wohnsituation, Nahrung, etc" ??
 
-\section{Alltag} % keine unterteilung in unterkapitel
+\section{Alltag} % keine unterteilung in unterkapitel mach's mit textbf und absatz
 
 \lipsum[6]
 
@@ -191,7 +177,7 @@ ein gewisses Maß an Hygiene und auch Schmuck war bereits damals ein wichtiges A
 
 \fchapter{Wikinger um die Welt}
 
-\section{Karte} %TODO: name!
+\section{Geografischer Überblick}
 
 \section{Die Wikinger in England}
 
@@ -211,10 +197,9 @@ ein gewisses Maß an Hygiene und auch Schmuck war bereits damals ein wichtiges A
 
 \lipsum[6]
 
-\fchapter{Zusammenfassung}
-%TODO: fix name
+\fchapter{Schluss}
 
-\section{Wiederholung}
+\section{Zusammenfassung}
 %TODO: name, hört sich zu expansiv an
 
 \lipsum[6]
@@ -225,6 +210,7 @@ ein gewisses Maß an Hygiene und auch Schmuck war bereits damals ein wichtiges A
 
 \newpage % für quellen
 \section{Quellenangaben}
+% TODO aus der wipo stellungnahme kopieren
 
 % TODO so viele leere seiten einfügen wie nötig
 \afterpage{\blankpage}
