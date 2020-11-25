@@ -1,7 +1,7 @@
 %!TEX TS-program = pdflatex
 % wikinger workbook
 \documentclass[12pt,a4paper,ngerman,openany]{book}
-\usepackage[demo]{graphicx} % TODO change for images
+\usepackage{graphicx}
 \usepackage[hang,splitrule]{footmisc}
 \usepackage[ngerman]{babel}
 \usepackage[parfill]{parskip}
@@ -18,7 +18,6 @@
 \usepackage{graphicx}
 \usepackage{hyphenat}
 \usepackage{lettrine}
-\usepackage{lipsum}
 \usepackage{paralist}
 \usepackage{pdfpages}
 \usepackage{setspace}
@@ -85,7 +84,8 @@ footskip=1cm}
 
 \input GotIn.fd % lettrine font
 \setstretch{1.125} % 1.125x line spacing
-\hyphenation{Mathe-matik wieder-gewinnen} % richtige worttrennung
+\hyphenation{Mathe-matik wieder-gewinnen} % silbentrennung
+\graphicspath{{./img/}}
 
 % space between 'chap #' and chap-title (https://latex.org/forum/viewtopic.php?t=21666)
 \titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{0pt}{\Huge}
@@ -98,11 +98,15 @@ footskip=1cm}
 % https://tex.stackexchange.com/questions/23860/how-to-include-a-picture-over-two-pages-left-part-on-left-side-right-on-right ?
 % doppelseitig: mit short edge drucken
 % TODO hunspell -d de_DE -t --check-apostrophe --check-url main.tex
-% TODO schwarz weiß
 % pdfbook2 -t 0 -b 0 -i 0 -o 0 main.pdf
+% TODO - und – durch \textemdash ersetzen
 
-% https://mostlymaths.net/2008/09/latex-booklets.html/
-% https://tex.stackexchange.com/questions/261431/print-eight-a6-pages-on-one-two-sided-a4-sheet-in-a-book-folding-order
+% TODO tabelle mit waffen
+% https://tex.stackexchange.com/questions/86006/adding-image-next-to-text-in-table
+
+% TODO danegeld, bondi, boendr, etc -> \textit
+
+% TODO waffen, kleidungs tabellen sonst auf die empty pages hinten
 
 \begin{document}
 
@@ -168,23 +172,21 @@ Bereits vorher gab es schon Aktivitäten, jedoch wurden diese nicht historisch f
 In dieser Anfangszeit gab es meist unkoordinierte Angriffe auf Orte ohne gute Verteidigung und mit viel Reichtum, wo es also viel potenzielle Beute gab. Oft wurden Klöster, Abteien und offene Städte (Städte ohne Verteidigung) überfallen.
 \end{tcolorbox}
 
-\erklaer{Schutzgeld}{abc} %TODO rm schutzgeld, inline
+%TODO schutzgeld erklären, inline
 
 \begin{tcolorbox}[sharp corners, title=Ungefähr 850 bis 900]
-In dieser sehr aktiven Phase wurden die Wikinger werden sich langsam ihres kriegerischen Potenzials bewusst. Die Angriffe werden jetzt besser geplant und laufen koordinierter ab und die allgemeine Bevölkerung (anderer Länder) hat große Angst vor den Plünderern.
-Jedoch wurden stärkere Nationen, die sich gegen den Wikingeransturm verteidigt haben, wie zum Beispiel Südengland, zunehmend in Ruhe gelassen. Daraus kann man erkennen, dass die Wikinger keine richtigen Kriegsherren waren und auch öfters größere Schlachten verloren haben. Zumal das Wikingervolk auch zu klein war, um Truppen aufzustellen die groß genug wären, um sich mit den stärkeren Gegnern zu messen.
+In dieser sehr aktiven Phase wurden die Wikinger sich langsam ihres kriegerischen Potenzials bewusst. Die Angriffe wurden jetzt besser geplant, laufen koordinierter ab und die allgemeine Bevölkerung anderer Länder hatte große Angst vor den Plünderern.
+Jedoch wurden stärkere Nationen, die sich gegen den Wikingeransturm verteidigt haben, wie zum Beispiel Südengland, zunehmend in Ruhe gelassen. Daraus kann man erkennen, dass die Wikinger keine richtigen Kriegsherren waren und auch öfters größere Schlachten verloren haben. Zumal das Wikingervolk auch zu klein war, um Truppen aufzustellen, die groß genug wären, um sich mit den stärkeren Gegnern zu messen.
 In dieser Zeit forderten die Wikinger auch das sogenannte “danegeld” (“Bezahlung an die Dänen”). Dieses immer steigende Schutzgeld wurde gezahlt, damit die Wikinger Dänemark nicht überfallen.
 In dieser Zeit kristallisierten sich auch die wichtigsten Handelsrouten heraus, wie zum Beispiel die West- und Nordroute.
 \end{tcolorbox}
 
-
-
 \begin{tcolorbox}[sharp corners, title=Ungefähr 900 bis 980]
-Zunehmend entstehen feste Niederlassungen und Territorien, vor allem in Skandinavien, aber auch beispielsweise in der Normandie (Nordwestfrankreich), Grönland, in Teilen Englands und Novgorod (Westrussland), zu welchen auch Handelsrouten bestanden. Falls die Wikinger sich aber, wie oben t.w. genannt, in anderen Ländern niederließen, mussten sie auch die dortigen Gesetze befolgen und sich dort eingliedern, wozu auch der Verteidigungsdienst für das “neue” Vaterland zählte. Dadurch verschwand in diesen Fällen “der Wikinger” nach ein paar Generationen.
+Zunehmend entstehen feste Niederlassungen und Territorien, vor allem in Skandinavien, aber auch beispielsweise in der Normandie (Nordwestfrankreich), Grönland, in Teilen Englands und Novgorod (Westrussland), zu welchen auch Handelsrouten bestanden. Falls die Wikinger sich aber, wie oben teilweise genannt, in anderen Ländern niederließen, mussten sie auch die dortigen Gesetze befolgen und sich dort eingliedern, wozu auch der Verteidigungsdienst für das “neue” Vaterland zählte. Dadurch verschwand in diesen Fällen “der Wikinger” nach ein paar Generationen.
 \end{tcolorbox}
 
 \begin{tcolorbox}[sharp corners, title=Ungefähr 980 bis 1066]
-Hier geht es meist nur noch um die restlichen Wikinger im Nordwesten Dänemarks und Südosten Schwedens. In Dänemark versuchen sie, und sind für eine kurze Zeit erfolgreich, die Herrschaft an sich zu reißen, während in Schweden lange Expeditionen nach Zentralasien gemacht wurden. Jedoch verloren die Wikinger zunehmend an Bedeutung, nicht nur weil das Wikingervolk immer kleiner wurde. Als größter Faktor für das “Verschwinden” des Wikingers ist die Christianisierung Nordeuropas zu nennen, durch welche auch zentrale Herrscher (Könige) großer Gebiete begünstigt wurden, zumal die einzelnen Wikingergruppen nie solche großen Gebiete kontrolliert haben, sondern eher lokale, kleinere Territorien beanspruchten.
+Hier ging es meist nur noch um die restlichen Wikinger im Nordwesten Dänemarks und Südosten Schwedens. In Dänemark versuchten sie, für eine kurze Zeit erfolgreich, die Herrschaft an sich zu reißen, während in Schweden lange Expeditionen nach Zentralasien gemacht wurden. Jedoch verloren die Wikinger zunehmend an Bedeutung, nicht nur weil das Wikingervolk immer kleiner wurde. Als größter Faktor für das “Verschwinden” des Wikingers ist die Christianisierung Nordeuropas zu nennen, durch welche auch zentrale Herrscher (Könige) großer Gebiete begünstigt wurden, zumal die einzelnen Wikingergruppen nie solche großen Gebiete kontrolliert haben, sondern eher lokale, kleinere Territorien beanspruchten.
 \end{tcolorbox}
 
 \vspace{0.66cm}
@@ -203,62 +205,123 @@ Hier geht es meist nur noch um die restlichen Wikinger im Nordwesten Dänemarks 
 \item Einige Königshäuser beginnen, den Wikingern Schutzgeld zu bezahlen.
 \end{itemize}
 
-
 \fchapter{Der typische Wikinger}
 
-\section{Kleidung}
 \section{Alltagskleidung}
+TEXT
 
 \section{Kriegerkleidung}
+TEXT
 
-\section{Haus und Hof} % TODO für "Wohnsituation, Nahrung, etc" ??
-
-\section{Alltag} % keine unterteilung in unterkapitel mach's mit textbf und absatz
-
-\lipsum[6]
+\aufgaben{
+  \item Schneide die Erklärtexte aus und ordne sie den richtigen Kriegerklamotten zu.
+}
 
 \section{Waffen}
+TEXT
 
-\lipsum[1-2]
+\aufgaben{
+  \item Schneide die Bilder aus und ordne sie dem passenden Erklärtext zu.
+}
+
+\section{Leben im Dorf}
+
+\aufgaben{
+  \item Bevor du weitermachst: Stelle dir vor, du lebtest in einem Wikingerdorf, wie könnte dein Alltag aussehen? Wie würde dein Zuhause aussehen? Beschreibe deine Ideen in einem Text.
+  \item Lies die beiden Texte.
+}
+
+\subsection{Haus und Hof}
+TEXT
+
+\subsection{Alltagsablauf}
+TEXT
+
+\aufgaben{
+  \item Nutze die Informationen aus dem Text und schildere deinen Tagesablauf in einem Tagebucheintrag.
+  \item Vergleiche die Informationen aus den Texten mit deinen Erwartungen und nenne Beispiele, wie sich der Alltag zu heute verändert hat.
+}
 
 \fchapter{Wikinger um die Welt}
 
 \section{Geografischer Überblick}
 
-\section{Die Wikinger in England}
+Williams Karte
 
-\lipsum[3]
+\aufgaben{
+  \item Bearbeite die Lückentexte mithilfe der Informationen aus der Karte.
+}
+
+\section{Die Wikinger in England}
+TEXT
+
+\aufgaben{
+  \item Lies den Text und erstelle eine Chronologie der Ereignisse.
+  \item Begründe warum England für die Wikinger als Angriffsziel so attraktiv war.
+}
 
 \fchapter{Die Wikingergesellschaft}
 
 \section{Ständeordnung}
+TEXT
 
-\lipsum[6]
+\aufgaben{
+  \item Begründe, ob du dich in der Wikingergesellschaft wohlfühlen würdest und beziehe Sichtweisen aus den verschiedenen Ständen ein.
+  \item Bewerte die Fairness und soziale Mobilität (Beweglichkeit in Bezug auf die soziale Stellung) in der Gesellschaft.
+}
 
 \section{Gemeinschaft und Gesellschaftsbild}
+TEXT
 
-\lipsum[6]
+\aufgaben{
+  %TODO fragen zum text
+  \item Frage (was ist eine blutsbrüderschaft?, X, Y) + Freiform Antwortmgl.
+  \item Beurteile ob die “Gemeinschaft” heute noch so einen hohen Stellenwert wie bei den Wikingern hat und inwiefern sich der Begriff gewandelt hat (z.B. durch Social Media).
+}
 
 \section{Die Rolle der Frau}
 
-\lipsum[6]
+\aufgaben{
+  \item Fasse die Aufgaben der Frau zusammen.
+  \item Bewerte mithilfe deiner Notizen zu voriger Aufgabe die Rolle der Frau (z.B. in Bezug auf Gleichberechtigung).
+  \item Arbeite Gemeinsamkeiten und Unterschiede in Gegenüberstellung zu der Frau heute heraus.
+}
 
 \fchapter{Schluss}
 
 \section{Zusammenfassung}
-%TODO: name, hört sich zu expansiv an
-
-\lipsum[6]
-
-\section{Ende}
-
-\lipsum[6]
 
 \newpage % für quellen
 \section{Quellenangaben}
-% TODO aus der wipo stellungnahme kopieren
+
+\textbf{Kapitel 1}
+\begin{itemize}
+  \item 
+\end{itemize}
+
+\textbf{Kapitel 2}
+\begin{itemize}
+  \item 
+\end{itemize}
+
+\textbf{Kapitel 3}
+\begin{itemize}
+  \item 
+\end{itemize}
+
+\textbf{Kapitel 4}
+\begin{itemize}
+  \item 
+\end{itemize}
+
+\textbf{Kapitel 5}
+\begin{itemize}
+  \item 
+\end{itemize}
+
 
 % TODO so viele leere seiten einfügen wie nötig
+% TODO how to avoid blank pages --signature ?
 \afterpage{\blankpage}
 \afterpage{\blankpage}
 \afterpage{\blankpage}
