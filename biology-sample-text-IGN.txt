@@ -1,0 +1,50 @@
+\flettrine{T}{he classic} kingdom \emph{Plant\ae} (Haeckel, 1866
+include all the multicellular green plants (\emph{Viridiplant\ae} in Latin) as flowering  
+plants, conifers, ferns, mosses and green algae. The number of species 
+are estimated\footnote{Largely underestimated according to many naturalist.} around 300,000 to 315,000.
+Usually red or brown seaweeds like kelp, fungi and bacteria have
+excluded from this group.
+This kingdom really exists since Carolus Linn\ae us (1707--1778) who 
+divided the natural world into animals, plants and minerals. The kingdom \emph{Animalia}  and \emph{Plant\ae} remained 
+in use by modern evolutionary biologists until some years.  
+
+\begin{wrapfigure}{r}{0.26\textwidth}
+\centering
+\includegraphics[scale=.26]{Descargas/mobot31753002356449_0113.jpg}
+\caption{\footnotesize \emph{Vallaris pergularia} from \emph{Icones plantarum}, vol. II., (Hooker, 1837).}
+\label{fig1}
+\end{wrapfigure}
+But now, both kingkoms are considered only two brachs of the unicelular kingdom \emph{Protist} 
+or \emph{Protozoa}\footnote{Although by tradition,  inconsistently the status of kingdom 
+is maintained \emph{Animalia}  and \emph{Plant\ae}.}.  
+\lipsum[2]
+
+\lipsum[3]
+
+
+---
+
+
+\flettrine{L}{arlegy}, organism like \emph{Candida albicans} has
+ been considered different of \emph{Protozoa} and related with green plants. However, today there 
+ are evidences that animals and true fungi are indeed closer to each other than to any other group 
+ in the eukaryote tree, far from the alveolates and other eukaryotic lineages.  
+
+\lipsum[4-6]
+
+
+---
+
+\begin{wraptable}{r}{7 cm}
+\vspace{-.5cm}
+\centering
+\footnotesize
+\caption{\label{wraptab}Estimated fungal species.}
+\begin{tabular}{lr}\\\toprule  
+Authors & Species \\\midrule
+Bisby and Ainsworth (1943) & $10^5$ \\  
+Martin (1951) &  $2.5\times10^5$  \\
+Hawksworth (1991) & $1.5\times10^6$ \\ 
+O’Brien \emph{et al.} (2005) & $>3.5\times10^6$ \\  \bottomrule
+\end{tabular}
+\end{wraptable} 

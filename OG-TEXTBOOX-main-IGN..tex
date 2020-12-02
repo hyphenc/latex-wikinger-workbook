@@ -1,0 +1,152 @@
+%!TEX TS-program = pdflatex
+% wikinger workbook
+% https://tex.stackexchange.com/questions/1319/showcase-of-beautiful-typography-done-in-tex-friends/74609#74609
+\documentclass[twoside,12pt,a4paper,ngerman]{book}
+\usepackage[demo]{graphicx}
+\usepackage[hang,splitrule]{footmisc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{chngcntr}
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{fourier-orns}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyphenat}
+\usepackage{lettrine}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{wrapfig}
+\usepackage{etoolbox}
+\usepackage[final,
+stretch=10,protrusion=true,
+tracking=true,expansion=true]{microtype}
+
+\renewcommand{\familydefault}{pplj} 
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\renewcommand{\footnoterule}{\vspace{0.5em}\noindent{\line(1,0){120}} \vspace{.5em} }
+\renewcommand{\LettrineFontHook}{\initfamily}
+\newcommand{\flettrine}[2]{\lettrine[lines=2, depth=0]{\initfamily{#1}}{ #2}}
+\newcommand{\ornpar}{\noindent {\hrulefill \raisebox{-1.9pt}[10pt][10pt]{\textxswup}}}
+\newcommand{\ornimpar}{\raisebox{-1.9pt}[10pt][10pt]{\textxswup} \hrulefill}
+\newcommand{\estcab}[1]{\itshape{\nouppercase #1}}
+\newcommand*\initfamily{\usefont{U}{GotIn}{xl}{n}}
+
+\geometry{
+tmargin=3cm,bmargin=3cm,
+lmargin=3cm,rmargin=2cm,
+headheight=1.5cm,headsep=0.8cm,
+footskip=0.5cm}
+
+\setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
+\setlength{\parindent}{1em}
+\setlength{\footnotemargin}{0.3cm}
+\setlength{\footnotesep}{0.4cm} 
+\addtolength{\footskip}{0.5cm}
+
+\newcommand{\fchapter}[1]{\chapter{#1}\thispagestyle{chapterstyle}}
+
+% https://www.overleaf.com/learn/latex/headers_and_footers#Reference_guide
+\fancyhf{} %TODO: cust
+
+\fancypagestyle{chapterstyle}{
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyhead{}
+  \fancyfoot[LE,RO]{\thepage}
+}
+
+\fancypagestyle{normalpage}{
+  \fancyhead[LE,RO]{\textit{\nouppercase{\leftmark}}}
+  \fancyhead[RE,LO]{\textit{\nouppercase{\rightmark}}}
+  \fancyfoot[LE,RO]{\thepage}
+}
+
+\pagestyle{normalpage}
+
+\counterwithout{figure}{chapter} % continuous figure/table numbering
+\counterwithout{table}{chapter} % continuous figure/table numbering
+
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+\input GotIn.fd % lettrine font
+\setstretch{1.125} % 1.25 line spacing
+\hyphenation{Mathe-matik wieder-gewinnen} % richtige worttrennung
+
+% space between 'chap #' and chap-title (https://latex.org/forum/viewtopic.php?t=21666)
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{0pt}{\Huge}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\author{titelseite}
+\date{titelseite}
+\title{titelseite}
+
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\thispagestyle{empty}
+
+\fchapter{Einleitung}
+
+\flettrine{T}{he classic} kingdom \emph{Plant\ae} (Haeckel, 1866
+include all the multicellular green plants (\emph{Viridiplant\ae} in Latin) as flowering  
+plants, conifers, ferns, mosses and green algae. The number of species 
+are estimated\footnote{Largely underestimated according to many naturalist.} around 300,000 to 315,000.
+Usually red or brown seaweeds like kelp, fungi and bacteria have
+excluded from this group.
+This kingdom really exists since Carolus Linn\ae us (1707--1778) who 
+divided the natural world into animals, plants and minerals. The kingdom \emph{Animalia}  and \emph{Plant\ae} remained 
+in use by modern evolutionary biologists until some years.  
+
+\begin{wrapfigure}{r}{0.26\textwidth}
+\centering
+\includegraphics[scale=.26]{Descargas/mobot31753002356449_0113.jpg}
+\caption{\footnotesize \emph{Vallaris pergularia} from \emph{Icones plantarum}, vol. II., (Hooker, 1837).}
+\label{fig1}
+\end{wrapfigure}
+But now, both kingkoms are considered only two brachs of the unicelular kingdom \emph{Protist} 
+or \emph{Protozoa}\footnote{Although by tradition,  inconsistently the status of kingdom 
+is maintained \emph{Animalia}  and \emph{Plant\ae}.}.  
+\lipsum[2]
+
+\lipsum[3]
+
+\section{Fungi}
+
+\flettrine{L}{arlegy}, organism like \emph{Candida albicans} has
+ been considered different of \emph{Protozoa} and related with green plants. However, today there 
+ are evidences that animals and true fungi are indeed closer to each other than to any other group 
+ in the eukaryote tree, far from the alveolates and other eukaryotic lineages.  
+
+%\begin{wraptable}{r}{7 cm}
+%\vspace{-.5cm}
+%\centering
+%\footnotesize
+%\caption{\label{wraptab}Estimated fungal species.}
+%\begin{tabular}{lr}\\\toprule  
+%Authors & Species \\\midrule
+%Bisby and Ainsworth (1943) & $10^5$ \\  
+%Martin (1951) &  $2.5\times10^5$  \\
+%Hawksworth (1991) & $1.5\times10^6$ \\ 
+%O’Brien \emph{et al.} (2005) & $>3.5\times10^6$ \\  \bottomrule
+%\end{tabular}
+%\end{wraptable} 
+
+\lipsum[4-6]
+
+\fchapter{Der typische Wikinger}
+\fchapter{Wikinger um die Welt}
+\fchapter{Die Wikingergesellschaft}
+\fchapter{Zusammenfassung} % TODO: fix name
+
+\end{document}
